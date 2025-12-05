@@ -20,60 +20,31 @@ mkdir -p public/images/autopsy public/images/resonair public/images/afropolik pu
 - **public/**
   - **images/**
     - `autopsy/`
-    - `resonair/`
-    - `afropolik/`
-    - `antio/`
-    - `echoia/`
-    - `object-metamorphosis/`
-    - `debris-tracer/`
-    - `jujube/`
-    - `seed-capsule/`
-    - `vom-blick/`
-    - `oensa-ant/`
-    - `ceramics/`
+    - ... (각 프로젝트 이름)
 
 ---
 
 ## 🖼️ 이미지/영상 교체 방법 (How to update assets)
 
 1. 위에서 만든 각 폴더에 실제 작품 사진이나 영상을 넣습니다.
-   - 지원 형식: `.jpg`, `.png`, `.webp`, `.gif`, `.mp4` 등
 2. `constants.ts` 파일을 엽니다.
 3. 해당 프로젝트를 찾아 `imageUrl`, `videoUrl` 등을 변경합니다.
    - **주의**: 경로는 `/public`을 빼고 `/images/...` 로 시작해야 합니다.
 
-**예시 (`constants.ts`):**
-```typescript
-{
-  id: 'p1',
-  title: 'Autopsy of Sensing',
-  // ... 기존 코드 ...
-  
-  // JPG 파일일 때
-  // imageUrl: '/images/autopsy/main_photo.jpg', 
-  
-  // PNG 파일일 때 (파일 이름과 확장자를 정확히 적어주세요)
-  imageUrl: '/images/autopsy/main_photo.png',
-  
-  // 비메오(Vimeo) 영상 넣기 (추천!)
-  // 주소창의 'https://vimeo.com/숫자' 가 아니라 'https://player.vimeo.com/video/숫자' 형식을 사용하세요.
-  videoUrl: 'https://player.vimeo.com/video/123456789',
-}
-```
-
 ---
 
-## 🚀 실행 방법 (How to Run)
+## 🚀 실행 및 배포 방법 (How to Run & Deploy)
 
-1. 패키지 설치:
-   ```bash
-   npm install
-   ```
-2. 개발 서버 실행 (내 컴퓨터에서 미리보기):
-   ```bash
-   npm run dev
-   ```
-3. 배포용 빌드:
-   ```bash
-   npm run build
-   ```
+### 1. 내 컴퓨터에서 미리보기 (Local Development)
+코드를 수정하고 바로 확인하려면 아래 명령어를 쓰세요.
+```bash
+npm run dev
+```
+
+### 2. 깃허브 페이지 배포하기 (Deploy to GitHub Pages)
+웹사이트를 인터넷에 올리려면 아래 명령어를 쓰세요. (자동으로 빌드해서 올립니다.)
+```bash
+npm run deploy
+```
+* 잠시 후 `Published` 메시지가 뜨면 성공입니다.
+* 깃허브 저장소 설정(Settings) -> Pages 메뉴에서 `gh-pages` 브랜치가 선택되어 있는지 확인하세요.
